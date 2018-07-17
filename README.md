@@ -37,5 +37,27 @@ ZNAKI SPECJALNE:
 \n	newline
 \a	alarm
 \0	null
+\t	tabulator
 
 namespace <nazwa> { zmienne } - zmienne w przestrzeni nazw
+using namespace <namespace>
+using namespace <namespace>::<nazwa>
+
+::<zmienna> - odniesienie do zmiennej globalnej, gdy ta jest zaslonieta w danym scope
+
+for(int i=0, int j=0;i<1337;i++,j+=2){}
+while(wyrazenie){}
+do{}while(wyrazenie)
+
+const <typ> <nazwa> = <wartosc> //stałe, lepsze niż #define
+register <typ> <nazwa> //kompilator bedzie staral sie trzymac zmienna w rejestrze procesora dla szybkiego dostepu (bez gwarancji). Nie mozna wskazywac na adres takiej zmiennej za pomoca wskaznika.
+volatile <typ> <nazwa> //informuje kompilator że zmienna może w niezauważalny dla niego sposów ulegać zmianie (np. odczyty, wielowątkowość)
+typedef <typ> <nowyTyp> //alias dla typu, pozwala umozliwienie zmiany typu wielu obiektow w jednym miejscu
+
+enum <nazwa_enum> {	stan1, //0
+				stan2 = 1,
+				stan3 = 54,
+				stan4, //55
+				stan5 = stan4}; //55
+<nazwa_enum> stany;
+stany = stan1 // powoduje ze stany przybiera wartość 0
