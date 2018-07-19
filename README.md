@@ -61,3 +61,36 @@ enum <nazwa_enum> {	stan1, //0
 				stan5 = stan4}; //55
 <nazwa_enum> stany;
 stany = stan1 // powoduje ze stany przybiera wartość 0
+
++ - * / //główne operandy
+%		//operand modulo
+c++		//postinkrementacja
+++c		//preinkrementacja
+< <= > >= != ==	//operatory relacji
+!		//NOT
+&&		//AND
+||		//OR
+
+<zmienna> << <ilość_miejsc>			//stratne przesunięcie bitowe w lewo (*=2)
+<zmienna> >> <ilość_miejsc>			//stratne przesunięcie bitowe w prawo (dodatnie wypelnia 0, ujemne może 1) (/=2)
+&		//bitowy AND
+|		//bitowy OR
+~		//bitowy NOT
+^		//bitowy XOR
+
+&<zmienna>		//zwraca adres zmiennej
+
+[<zmienna> = ]<warunek> ? <wartość_true> : <wartość_false>	//jeżeli true, zwraca wartosc_true i analogicznie false
+
+sizeof(<nazwa_typu>) lub sizeof(<nazwa_zmiennej>) //zwraca liczbę bajtów w danym typie
+
+(<typ_na_który_rzutujemy>)<zmienna>		//stare rzutowanie, zmiana jednego typu w drugi
+
+Nowe rzutowanie:
+static_cast<<typ_na_który_rzutujemy>>(<zmienna>)	
+dynamic_cast<<typ_na_który_rzutujemy>>(<zmienna>)	//jeżeli może to rzutuje, jak nie to zwraca wskaznik i rzuca wyjatek
+const_cast<<typ_bez_const>>(<zmienna_const>) //usuwane by usuwać const lub volatile
+reinterpret_cast<<typ_na_który_rzutujemy>>(<zmienna>)	//nie kompiluje sie w procedury CPU, to okreslenie ze <zmienna> ma traktowac jak rzutowany <typ>
+	przyklad z wskaźnikami: adr_first = adr_second //nie uda się, bo wskazują na różne typy
+							adr_first = reinterpret_cast<type_first*>(adr_second)
+
